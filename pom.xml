@@ -1,0 +1,104 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>com.github.banana-j</groupId>
+	<artifactId>chimpexcel</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	
+	<name>ChimpExcel</name>
+	<description>A sample Java program to export Mailchimp audiences to file (XLS).</description>
+	<url>http://maven.apache.org</url>
+
+	<licenses>
+		<license>
+			<name>MIT</name>
+			<url>https://github.com/gscriver/chimpexcel/raw/master/LICENSE</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Alexander Weiß</name>
+			<url>https://www.github.com/alexanderwe</url>
+		</developer>
+		<developer>
+			<name>Gary Scriver</name>
+			<url>https://www.github.com/gscriver</url>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:ssh://git@github.com:gscriver/chimpexcel.git</connection>
+		<url>https://github.com/gscriver/chimpexcel</url>
+	</scm>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/gscriver/chimpexcel/issues</url>
+	</issueManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.github.banana-j</groupId>
+			<artifactId>bananaj</artifactId>
+			<version>0.6.3-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sourceforge.jexcelapi</groupId>
+			<artifactId>jxl</artifactId>
+			<version>2.6.12</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<!-- Build an executable JAR -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>false</addClasspath>
+							<!-- <classpathPrefix>lib/</classpathPrefix> -->
+							<mainClass>com.github.bananaj.chimpexcel.App</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
