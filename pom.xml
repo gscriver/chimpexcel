@@ -5,11 +5,11 @@
 	
 	<groupId>com.github.banana-j</groupId>
 	<artifactId>chimpexcel</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1-SNAPSHOT</version>
 	
 	<name>ChimpExcel</name>
 	<description>A sample Java program to export Mailchimp audiences to file (XLS).</description>
-	<url>http://maven.apache.org</url>
+	<url>https://github.com/gscriver/chimpexcel</url>
 
 	<licenses>
 		<license>
@@ -50,7 +50,7 @@
 		<dependency>
 			<groupId>com.github.banana-j</groupId>
 			<artifactId>bananaj</artifactId>
-			<version>0.6.3-SNAPSHOT</version>
+			<version>0.7.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>net.sourceforge.jexcelapi</groupId>

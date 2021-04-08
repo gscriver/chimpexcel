@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration debug="false"
+  xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<!-- console -->
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- categories -->
+	<category name="com.github.alexanderwe.bananaj">
+		<priority value="OFF" />
+	</category>
+	
+	<root>
+		<!--
+		OFF 	The highest possible rank and is intended to turn off logging.
+		FATAL	Designates very severe error events that will presumably lead the application to abort.
+		ERROR	Designates error events that might still allow the application to continue running.
+		WARN	Designates potentially harmful situations.
+		INFO	Designates informational messages that highlight the progress of the application at coarse-grained level.
+		DEBUG	Designates fine-grained informational events that are most useful to debug an application.
+		TRACE	Designates finer-grained informational events than the DEBUG.
+		ALL 	All levels including custom levels.
+		-->
+		<level value="OFF" />
+		<appender-ref ref="console" />
+	</root>
+
+</log4j:configuration>
