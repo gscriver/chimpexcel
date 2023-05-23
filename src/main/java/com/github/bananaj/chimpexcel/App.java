@@ -41,7 +41,7 @@ public class App {
 	}
 	
 	/**
-	 * Export information for up to 10 Mailchimp audiences to workbook file (XLS).
+	 * Export Mailchimp audiences to workbook file (XLS).
 	 * @throws Exception
 	 */
 	public static void writeAllListToExcel(MailChimpConnection chimpCon, String filepath, boolean show_merge) throws Exception {
@@ -49,7 +49,7 @@ public class App {
 		WritableFont times12font = new WritableFont(WritableFont.TIMES, 12, WritableFont.BOLD, false);
 		WritableCellFormat times12format = new WritableCellFormat (times12font);
 
-		List<MailChimpList> mailChimpLists = chimpCon.getLists(10,0);
+		Iterable<MailChimpList> mailChimpLists = chimpCon.getLists(10,0);
 		int index  = 0;
 		for(MailChimpList mailChimpList : mailChimpLists){
 			WritableSheet sheet = workbook.createSheet(mailChimpList.getName(), index);
