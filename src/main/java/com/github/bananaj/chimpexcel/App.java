@@ -2,7 +2,6 @@ package com.github.bananaj.chimpexcel;
 
 import java.io.File;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map.Entry;
 
 import com.github.bananaj.connection.MailChimpConnection;
@@ -49,9 +48,8 @@ public class App {
 		WritableFont times12font = new WritableFont(WritableFont.TIMES, 12, WritableFont.BOLD, false);
 		WritableCellFormat times12format = new WritableCellFormat (times12font);
 
-		Iterable<MailChimpList> mailChimpLists = chimpCon.getLists(10,0);
 		int index  = 0;
-		for(MailChimpList mailChimpList : mailChimpLists){
+		for(MailChimpList mailChimpList : chimpCon.getLists()){
 			WritableSheet sheet = workbook.createSheet(mailChimpList.getName(), index);
 			int hcolumn=0;
 			sheet.addCell(new Label(hcolumn++, 0, "MemberID", times12format));
